@@ -6,19 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Carrito de compras</title>
 </head>
-<body>
-    <h1>Carrito de compras</h1>
-    <div>
-        <label for="producto">Producto:</label>
-        <input type="text" id="producto">
-    </div>
-    <div>
-        <label for="precio">Precio:</label>
-        <input type="number" id="precio">
-    </div>
-    <button onclick="agregarProducto()">Agregar producto</button>
-    <ul id="carrito"></ul>
-    <p>Total: $<span id="total"></span></p>
+<h1>Carrito de compras con JavaScript</h1>
+
+  <form>
+    <label for="producto">Producto:</label>
+    <select id="producto"></select>
+    <br>
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" value="1">
+    <button type="button" onclick="agregarProducto()">Agregar</button>
+  </form>
+
+  <h2>Carrito</h2>
+  <ul id="carrito"></ul>
+
+  <div>
+    <label for="total">Total:</label>
+    <span id="total"></span>
+  </div>
+
+  <button type="button" onclick="vaciarCarrito()">Vaciar carrito</button>
 
     <script src="app.js"></script>
 </body>

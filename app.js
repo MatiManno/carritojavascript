@@ -13,7 +13,7 @@ function cargarProductos() {
       const selectProducto = document.getElementById('producto');
       productos.forEach(producto => {
         const option = document.createElement('option');
-        option.value = producto.nombre;
+        option.setAttribute('value', producto.nombre); // Agregar la propiedad value a la opción
         option.text = producto.nombre;
         selectProducto.add(option);
       });
@@ -75,20 +75,20 @@ function eliminarProducto(index) {
 // Función para calcular el total del carrito
 function calcularTotal() {
   const totalElement = document.getElementById('total');
-  totalElement.innerHTML = `${total.toFixed(2)}`;
-  }
-  
-  // Función para vaciar el carrito
-  function vaciarCarrito() {
+  totalElement.innerHTML = `$${total.toFixed(2)}`;
+}
+
+// Función para vaciar el carrito
+function vaciarCarrito() {
   // Vaciar el arreglo de productos del carrito y resetear el total
   productosCarrito = [];
   total = 0;
-  
+
   // Actualizar el HTML
   const carrito = document.getElementById('carrito');
   carrito.innerHTML = '';
   calcularTotal();
-  }
-  
-  // Llamada a la función para cargar los productos al cargar la página
-  cargarProductos();
+}
+
+// Llamada a la función para cargar los productos al cargar la página
+cargarProductos();
